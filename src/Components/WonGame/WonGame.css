@@ -1,0 +1,12 @@
+.winsDiv{
+     height: 100%;
+     margin: auto;
+     width: 30%;
+     background-color: rgba(255, 162, 0, 0.503);
+     color: black;
+     font-size: 30px;
+     text-align: center;
+     display: block;
+     float: right;
+}
+
