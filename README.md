@@ -1,4 +1,4 @@
-# Clicky Game
+# Clicky Game - React/Node.js
 
 ## Overview
 
