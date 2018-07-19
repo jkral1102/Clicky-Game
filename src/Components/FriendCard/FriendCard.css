@@ -1,18 +1,25 @@
 .friend{
-        border-radius: 50%; 
-        width: 120px;
-        overflow: hidden;
-        margin: 1em;
-        box-shadow: 0 3px 6px rgb(19, 9, 9), 0 3px 6px rgb(7, 0, 0);
-        float: left;
+        flex: 1;
+        margin: 0 15px 0 15px;
+      
+        /* overflow: hidden; */
+        /* margin: 0 10px 0 10px;
+        box-shadow: 0 3px 6px rgb(19, 9, 9), 0 3px 6px rgb(7, 0, 0); */
+        /* float: left; */
 
-
+/* 
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
+        align-items: center; */
+        
+}
+
+.friend:hover{
+        filter: grayscale(100%);
 }
 img{
         height: 120px;
+        border-radius: 50%;
 }

@@ -8,9 +8,10 @@ const Header = props => (
 
         </div>
 
-        <div className="message" onChange={this.handleChange}>
-            <p>{props.message}</p>
-        </div>
+            <div className="message" onChange={this.handleChange}>
+                <p>{props.message}</p>
+            </div>
+
 
         <div className="scores">
             <p>Current Score: {props.score} | Highest Score: {props.highscore}</p>

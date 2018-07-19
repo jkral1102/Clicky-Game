@@ -84,7 +84,7 @@ class App extends Component {
     let win = this.state.wins > 0 ? <WonGame wins={this.state.wins} /> : null
 
     return (
-      <div className="wrapper">
+      <div id='App'>
         <Header
           message={this.state.clickMessage}
           score={this.state.score}
@@ -94,7 +94,7 @@ class App extends Component {
 
         {win}
 
-        <div className="friends">
+        <div id="friendDiv">
           {this.state.friends.map(friend =>
             <FriendCard
               id={friend.id}
