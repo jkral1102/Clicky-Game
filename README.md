@@ -1,4 +1,4 @@
-# Clicky Game - React/Node.js
+# Memory Game - React/Node.js
 
 ## Overview
 
