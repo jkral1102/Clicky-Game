@@ -4,7 +4,7 @@ import './header.css';
 const Header = props => (
     <header className="header">
         <div className="title">
-            <p>Clicky Game</p>
+            <p>Memory Game</p>
 
         </div>
 
