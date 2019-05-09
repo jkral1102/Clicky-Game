@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-// All components 
 import FriendCard from "./Components/FriendCard";
-import Header from "./Components/Header";
 import WonGame from "./Components/WonGame";
-// Data 
 import friends from "./friends.json";
-// Css 
 import "./App.css";
+import Header from './header.png';
 
 class App extends Component {
   constructor() { 
@@ -21,7 +18,6 @@ class App extends Component {
       friends: friends,
       wins: 0
     }
-    this.handleClick = this.handleClick.bind(this);
   }
 
 
@@ -84,17 +80,15 @@ class App extends Component {
     let win = this.state.wins > 0 ? <WonGame wins={this.state.wins} /> : null
 
     return (
-      <div id='App'>
-        <Header
-          message={this.state.clickMessage}
-          score={this.state.score}
-          highscore={this.state.highscore}
-          
-        />
-
+      <div id='App'> 
+    <div id='header'></div>
+    <div id='wrapper'>
         {win}
-
-        <div id="friendDiv">
+        <div id='scores'>
+          Current Score: {this.state.score} | Highest Score: {this.state.highscore}
+          </div>
+        <div id="friends">
+       
           {this.state.friends.map(friend =>
             <FriendCard
               id={friend.id}
@@ -104,6 +98,7 @@ class App extends Component {
               handleClick={this.handleClick}
             />
           )}
+           </div>
         </div>
         
       </div>
