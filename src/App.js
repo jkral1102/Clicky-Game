@@ -77,6 +77,7 @@ class App extends Component {
           <div id='scores'>
             <span>Current Score: {this.state.score} | Highest Score: {this.state.highscore}</span>
             <span>{this.state.message}</span>
+           
           </div>
           <div id="cards">
             {this.state.friends.map(friend =>
@@ -89,8 +90,10 @@ class App extends Component {
               />
             )}
           </div>
+          <button onClick={() => {this.setState({ score: 0 })} }> Reset </button>
+          
         </div>
-
+        <div id='footer'>Memory Game | Jennifer Kral  | 2018</div>
       </div>
     )
   }

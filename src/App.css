@@ -17,7 +17,8 @@ body {
 }
 
 #header{
-  height: 30vh;
+  max-height: 30vh;
+  min-height: 30vh;
   background-image: url('./header.png');
   background-size: 50%;
   background-repeat: no-repeat;
@@ -29,13 +30,12 @@ body {
 #cards {
   display: flex;
   max-width: 500px;
+  min-width: 500px;
   margin: auto;
   margin-top: 3vh;
-  flex-wrap: wrap;
 }
 
 #scores{
-
   font-size: 26px;
   color: #084d68;
   display: flex;
@@ -47,10 +47,37 @@ body {
 }
 
 #wrapper{
-  width: 40vw;
+  max-width: 40vw;
   margin: auto;
   background-color: #6489c1;
   border: solid 1px rgb(145, 145, 145);
   border-radius: 20px;
-  padding: 20px;
+  padding: 10px;
+}
+
+button {
+  background-color: rgb(44, 44, 44);
+  color: rgb(170, 170, 170);
+  border-radius: 5px;
+  height: 30px;
+  width: 100px;
+  border: none;
+  font-size: 19px;
+  margin-top: 20px;
+}
+
+button:hover{
+  color: white;
+  cursor: pointer;
+}
+
+#footer{
+  background-color: rgb(34, 34, 34);
+  height: 5vh;
+  color: rgb(143, 143, 143);
+  line-height: 5vh;
+  text-align: center;
+  justify-content: center;
+  font-size: 12px;
+  border-top: solid 1px black;
 }
