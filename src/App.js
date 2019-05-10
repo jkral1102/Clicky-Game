@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import FriendCard from "./Components/FriendCard";
+import Card from "./Components/Card";
 import WonGame from "./Components/WonGame";
-import friends from "./friends.json";
+import friends from "./cards.json";
 import "./App.css";
-import Header from './header.png';
 
 class App extends Component {
-  constructor() { 
+  constructor() {
 
     super();
 
     this.state = {
-      clickMessage: "Click an image to begin!",
+      message: "Click an image to begin!",
       highscore: 0,
       score: 0,
       clicked: [],
@@ -20,20 +19,15 @@ class App extends Component {
     }
   }
 
-
-  
   handleClick = (id) => {
-
     function shuffleArray(a) {
       var array = a;
-
       for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
       }
     }
     shuffleArray(this.state.friends);
-
 
     var array = this.state.clicked;
 
@@ -43,7 +37,7 @@ class App extends Component {
       this.setState({
         clicked: [...array, id],
         score: newscore,
-        clickMessage: "Good click!"
+        message: "Good click!"
       })
 
       // highscore update 
@@ -57,22 +51,18 @@ class App extends Component {
         this.setState({
           clicked: [],
           score: 0,
-          clickMessage: "You beat the game! Good job!",
+          message: "You beat the game. Good job!",
           wins: this.state.wins + 1
         });
-
       }
-
     } else {
       // if id was found (previously clicked), reset game
       this.setState({
         clicked: [],
         score: 0,
-        clickMessage: "You lose :("
+        message: "You lose."
       });
     }
-
-
   }
 
   render() {
@@ -80,27 +70,27 @@ class App extends Component {
     let win = this.state.wins > 0 ? <WonGame wins={this.state.wins} /> : null
 
     return (
-      <div id='App'> 
-    <div id='header'></div>
-    <div id='wrapper'>
-        {win}
-        <div id='scores'>
-          Current Score: {this.state.score} | Highest Score: {this.state.highscore}
+      <div id='App'>
+        <div id='header'></div>
+        <div id='wrapper'>
+          {win}
+          <div id='scores'>
+            <span>Current Score: {this.state.score} | Highest Score: {this.state.highscore}</span>
+            <span>{this.state.message}</span>
           </div>
-        <div id="friends">
-       
-          {this.state.friends.map(friend =>
-            <FriendCard
-              id={friend.id}
-              key={friend.id}
-              name={friend.name}
-              image={friend.image}
-              handleClick={this.handleClick}
-            />
-          )}
-           </div>
+          <div id="cards">
+            {this.state.friends.map(friend =>
+              <Card
+                id={friend.id}
+                key={friend.id}
+                name={friend.name}
+                image={friend.image}
+                handleClick={this.handleClick}
+              />
+            )}
+          </div>
         </div>
-        
+
       </div>
     )
   }
